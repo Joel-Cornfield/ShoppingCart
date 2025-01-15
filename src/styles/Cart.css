@@ -1,0 +1,50 @@
+.cart-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 4rem auto;
+    max-width: 800px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.cart-container h1 {
+    font-family: "Gorditas", serif;
+    margin: 0 0 2rem 0;
+    font-size: 2rem;
+    color: #ACE1AF;
+    text-align: center;
+}
+
+.cart-item .product-title{
+    padding: 1rem 0;
+    display: flex;
+    align-items: flex-start; /* Align text and button at the top */
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow title to break to the next line if too long */
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.cart-item button {
+    background-color: #541b21; /* Tomato color */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    align-self: flex-end; /* Align the button at the bottom */
+}
+
+.cart-item button:hover {
+    background-color: #e53e3e; /* Darker red on hover */
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #ACE1AF;
+    margin: 1rem 0;
+}

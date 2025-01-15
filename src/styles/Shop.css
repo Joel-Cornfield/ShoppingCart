@@ -1,0 +1,159 @@
+/* shop.css */
+h1 {
+    margin: 3rem auto;
+    font-family: "Gorditas", serif;
+    text-align: center;
+    font-size: 2.8rem;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 25px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-rows: auto 200px auto auto auto auto;
+    height: 520px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+.product-card h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+    height: 3em;
+    overflow: hidden;
+    color: #2c3e50;
+    line-height: 1.4;
+    padding: 0 0.5rem;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 15px;
+    padding: 1rem 0;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card .price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+
+.product-card .quantity {
+    width: 100px;
+    margin: 0.5rem auto;
+    padding: 0.8rem;
+    border: 2px solid #e1e1e1;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.product-card .quantity:focus {
+    border-color: #ACE1AF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(172, 225, 175, 0.2);
+}
+
+.product-card button {
+    width: 100%;
+    margin-top: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.product-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: fadeIn 0.6s ease-out;
+    animation-fill-mode: backwards;
+}
+
+/* Add animation delay for each card */
+.product-card:nth-child(2n) {
+    animation-delay: 0.2s;
+}
+
+.product-card:nth-child(3n) {
+    animation-delay: 0.4s;
+}
+
+@media (max-width: 1200px) {
+    .product-list {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+}
